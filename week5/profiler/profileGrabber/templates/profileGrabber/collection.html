@@ -1,0 +1,29 @@
+{% extends "profileGrabber/template.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="margin-top:40px;">
+
+    <h3>Here are the tweets that have been saved</h3>
+
+
+    <!--the one javascript feature-->
+    <ul class="collapsible popout" data-collapsible="accordion">
+
+        {% for tweets in saved_tweets %}
+            <li><!-- the component change -->
+                <div class="collapsible-header"><span class="new badge">4</span><i class="material-icons">play_arrow</i><b>{{ tweets.text }}</b>
+                </div>
+                <div class="collapsible-body">
+                    <p style="padding-bottom:5px;"><b>{{ tweets.owner }}</b>{{ tweets.created_at }}
+                        <b>Influencer:</b><u>YES</u></p>
+                    <p style="padding-top:0px;"></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+{% endblock %}

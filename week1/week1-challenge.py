@@ -21,9 +21,15 @@ def get_profile(screen_name):
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
     try:
-        tweets = api.user_timeline(screen_name=screen_name, count=1)
+        saved_tweets = []
+        tweets = api.user_timeline(screen_name=screen_name, count=10)
+        print("test1")
         for x in tweets:
-            print(x.text)
+
+            saved_tweets.append(x)
+            #print(type(x.user))
+        for tweet in saved_tweets:
+            print(tweet.id_str)
     except:
         print("Not working")
 

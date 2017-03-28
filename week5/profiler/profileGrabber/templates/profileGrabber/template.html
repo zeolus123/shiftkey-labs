@@ -1,22 +1,22 @@
+{% load static %}
+
 <html>
   <head>
     <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css. Read more about it at http://materializecss.com/ -->
+      <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-      <!-- We aren't really using a CSS stylesheet in this app. If you want to
-      customize it, use the style.css sheet -->
-      <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
     <nav class="blue">
       <div class="nav-wrapper container">
-        <a href="index.html" class="brand-logo">Twitter Profiler</a>
+        <a href="/profileGrabber/" class="brand-logo">Twitter Profiler</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/profileGrabber">Home</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="collection.html">Collection</a></li>
         </ul>
@@ -28,43 +28,7 @@
       </div>
     </nav>
     <div class="container" style="margin-top:40px;">
-      <h1>Twitter Profiler</h1>
-      <div class="row">
-        <div class="col m6">
-          <img style="display: block; margin-left: auto; margin-right: auto;" src="assets/twitter.svg">
-        </div>
-        <div class="col m6">
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header active"><i class="material-icons">info_outline</i>Start with the basics</div>
-              <div class="collapsible-body"><p>This tutorial assumes that you are familiar with object oriented programing. It also helps to know html/css, which you can learn online on your own.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">whatshot</i>Code like crazy</div>
-              <div class="collapsible-body"><p>Though we only meet for 90 minutes a week, it will take many people at least 10 hours each week (for five weeks) to become famililar enough with these skills to pull a project off.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">grade</i>Master the Django stack</div>
-              <div class="collapsible-body"><p>Whether this is your first stack or one of many, Django is a good stack to master for applications that work with data. Read more about pythons powerful data science libraries like NumPy, NLTK, SciPy, Pandas... </p></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col m4" style="text-align: center;">
-          <i class="large material-icons">perm_identity</i>
-          <h5>Discover twitter profiles<h5>
-        </div>
-        <div class="col m4 icon-prievew" style="text-align: center;">
-          <i class="large material-icons">group_work</i>
-          <h5>Add profiles to a list<h5>
-        </div>
-        <div class="col m4" style="text-align: center;">
-          <i class="large material-icons">done</i>
-          <h5>Learn the Django stack!</h5>
-        </div>
-      </div>
-
+      {% block content %} {% endblock %}
     </div>
     <footer class="page-footer blue">
           <div class="container">
