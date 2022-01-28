@@ -3,13 +3,6 @@
 import tweepy
 import time #https://github.com/tweepy/tweepy
 
-# Twitter API credentials. Get yours from apps.twitter.com. Twitter acct rquired
-# If you need help, visit https://dev.twitter.com/oauth/overview
-consumer_key = "qkAJRE0PK4hQOfJbfB7IAIvDI"
-consumer_secret = "1nLFjCAT3OjW6aHOYHZq2GeXkn4lvdKs4GGwo4TleZ3U4gEc97"
-access_key = "103593331-eDe1tVpxandq4ae6VHS38MXrzDisq2Jgt36DyLpl"
-access_secret = "i4Q8fdHDMIIHS6asGj1w8ouKPfonbMV11LiQQumPTTHMW"
-
 # this function collects a twitter profile request and returns a Twitter object
 def get_profile(screen_name):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
